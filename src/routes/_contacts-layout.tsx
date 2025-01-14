@@ -1,4 +1,5 @@
-import { createFileRoute, Link, Outlet } from "@tanstack/react-router";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { UsersList } from "~/entities/contact/ui/contacts-list";
 
 export const Route = createFileRoute("/_contacts-layout")({
   component: RouteComponent,
@@ -7,12 +8,9 @@ export const Route = createFileRoute("/_contacts-layout")({
 function RouteComponent() {
   return (
     <div>
-      <div className="text-blue-400">
-        <Link to=".">Home Contacts</Link>
+      <div className="text-blue-400 px-4 py-5">
         <br />
-        <Link to="/$contactId" params={{ contactId: "123" }}>
-          Contact
-        </Link>
+        <UsersList />
       </div>
       <Outlet />
     </div>

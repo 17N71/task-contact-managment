@@ -1,14 +1,13 @@
 {
 	"users": [
-		{
-			"id": "1",
-			"name": "Vle",
-			"email": "dasd@dasd.ds"
-			},
-			{
-			"id": "8db4",
-			"name": "dasd",
-			"email": "dasda@dds.ds"
-			}
+		{"id":"1","name":"Dennis Beatty"},
+		{"id":"2","name":"Greg Brimble"},
+		{"id":"3","name":"Ryan Dahl"},
+		{"id":"4","name":"Sarah Dayan"},
+		{"id":"5","name":"Ceora Ford"},
+		{"id":"6","name":"Anthony Frehner"},
+		{"id":"7","name":"Arisa Fukuzaki"},
+		{"id":"8","name":"Henri Helvetica"},
+		{"id":"9","name":"Michael Jackson"}
 	]
 }
