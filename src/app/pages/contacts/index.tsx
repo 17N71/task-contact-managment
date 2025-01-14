@@ -1,9 +1,9 @@
-import { UserCard } from "~/entities/contact/ui/contact-card";
+import { ContactCreateForm } from "~/entities/contact/ui";
 
 export function ContactsPage() {
   return (
     <div>
-      <UserCard />
+      <ContactCreateForm />
     </div>
   );
 }

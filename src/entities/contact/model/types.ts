@@ -7,3 +7,12 @@ export interface ContactEntity {
 export type ContactLinkParams = {
   contactId?: string;
 };
+
+export type ContactListitemProps = {
+  onSelect: () => void;
+  isSelected: boolean;
+} & ContactEntity;
+
+export type DetailedContactProps = {
+  contact: ContactEntity | undefined;
+};

@@ -21,6 +21,9 @@ export const UserAPI = {
         });
         return await data.json();
       },
+      select: (data) => {
+        return data[0];
+      },
     });
   },
 };

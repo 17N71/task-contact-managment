@@ -1,5 +1,5 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
-import { UsersList } from "~/entities/contact/ui/contacts-list";
+import { UsersList } from "~/entities/contact/ui";
 
 export const Route = createFileRoute("/_contacts-layout")({
   component: RouteComponent,
@@ -7,11 +7,8 @@ export const Route = createFileRoute("/_contacts-layout")({
 
 function RouteComponent() {
   return (
-    <div>
-      <div className="text-blue-400 px-4 py-5">
-        <br />
-        <UsersList />
-      </div>
+    <div className="flex items-start px-4 py-5 gap-10">
+      <UsersList />
       <Outlet />
     </div>
   );
