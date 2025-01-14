@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ContactListitemProps } from "../model/types";
 import { cn } from "~/shared/utils/cn";
+import { ContactListitemProps } from "../model/types";
 
 export function ContactListitem({
   onSelect,

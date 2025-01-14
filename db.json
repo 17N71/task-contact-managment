@@ -1,13 +1,76 @@
 {
-	"users": [
-		{"id":"1","name":"Dennis Beatty"},
-		{"id":"2","name":"Greg Brimble"},
-		{"id":"3","name":"Ryan Dahl"},
-		{"id":"4","name":"Sarah Dayan"},
-		{"id":"5","name":"Ceora Ford"},
-		{"id":"6","name":"Anthony Frehner"},
-		{"id":"7","name":"Arisa Fukuzaki"},
-		{"id":"8","name":"Henri Helvetica"},
-		{"id":"9","name":"Michael Jackson"}
-	]
+  "users": [
+    {
+      "id": "1",
+      "name": "Dennis Beatty",
+      "username": "@DennisBeatty",
+      "avatar": "/avatars/dennis_beatty.jpg",
+      "external_url": "https://github.com/DennisBeatty",
+      "about": "Dennis is a software engineer specializing in backend development and open-source projects."
+    },
+    {
+      "id": "2",
+      "name": "Greg Brimble",
+      "username": "@GregBrimble",
+      "avatar": "/avatars/greg_brimble.jpeg",
+      "external_url": "https://facebook.com/GregBrimble",
+      "about": "Greg is a front-end developer with a passion for building engaging user experiences."
+    },
+    {
+      "id": "3",
+      "name": "Ryan Dahl",
+      "username": "@RyanDahl",
+      "avatar": "/avatars/ryan_dahl.png",
+      "external_url": "https://github.com/RyanDahl",
+      "about": "Ryan is the creator of Node.js and Deno, focusing on efficient and modern JavaScript runtimes."
+    },
+    {
+      "id": "4",
+      "name": "Sarah Dayan",
+      "username": "@SarahDayan",
+      "avatar": "/avatars/sarah_dayan.jpg",
+      "external_url": "https://instagram.com/SarahDayan",
+      "about": "Sarah is a UI/UX designer with expertise in creating visually appealing and functional designs."
+    },
+    {
+      "id": "5",
+      "name": "Ceora Ford",
+      "username": "@CeoraFord",
+      "avatar": "/avatars/ceora_ford.jpg",
+      "external_url": "https://facebook.com/CeoraFord",
+      "about": "Ceora is a content creator and web developer passionate about empowering new developers."
+    },
+    {
+      "id": "6",
+      "name": "Anthony Frehner",
+      "username": "@AnthonyFrehner",
+      "avatar": "/avatars/anthony_frehner.jpg",
+      "external_url": "https://github.com/AnthonyFrehner",
+      "about": "Anthony is a full-stack developer with a knack for solving complex problems and writing clean code."
+    },
+    {
+      "id": "7",
+      "name": "Arisa Fukuzaki",
+      "username": "@ArisaFukuzaki",
+      "avatar": "/avatars/arisa_fukuzaki.webp",
+      "external_url": "https://instagram.com/ArisaFukuzaki",
+      "about": "Arisa is a digital marketer and developer with a focus on building impactful web campaigns."
+    },
+    {
+      "id": "8",
+      "name": "Henri Helvetica",
+      "username": "@HenriHelvetica",
+      "avatar": "/avatars/henri_helvetica.jpeg",
+      "external_url": "https://facebook.com/HenriHelvetica",
+      "about": "Henri is a web performance advocate and developer passionate about fast and accessible web experiences."
+    },
+    {
+      "id": "9",
+      "name": "Michael Jackson",
+      "username": "@MichaelJackson",
+      "avatar": "/avatars/michael_jackson.jpeg",
+      "external_url": "https://instagram.com/MichaelJackson",
+      "about": "Michael Jackson was a legendary singer, songwriter, and performer known as the King of Pop."
+    }
+  ]
 }

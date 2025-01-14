@@ -14,16 +14,18 @@ export const useFilteredList = (
   const contact = list.find(({ id }) => id === selectedId);
   // find and show contact if we need to show the selected contact independent search term filtered contacts list
 
-  const filteredList = searchTerm
-    ? [
-        ...new Set([
-          contact,
-          ...list.filter(
-            (user) => user && new RegExp(deferredTerm, "gmi").test(user.name)
-          ),
-        ]),
-      ]
-    : list;
+  const filteredList = (
+    searchTerm
+      ? [
+          ...new Set([
+            contact,
+            ...list.filter(
+              (user) => user && new RegExp(deferredTerm, "gmi").test(user.name)
+            ),
+          ]),
+        ]
+      : list
+  ) as ContactEntity[];
 
   // if we do not need to show the selected contact
   // const filteredList = searchTerm
