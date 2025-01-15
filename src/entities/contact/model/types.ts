@@ -31,4 +31,9 @@ export type ContactListProps = {
   setSelectedId: Dispatch<React.SetStateAction<string | null>>;
   filteredList: ContactEntity[];
   selectedId: string | null;
+  contactId: string | null;
+};
+
+export type ContactProps = {
+  initialContactId: string | null;
 };

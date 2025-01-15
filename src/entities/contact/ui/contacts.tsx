@@ -1,18 +1,18 @@
 import { useState } from "react";
-import { useParams } from "@tanstack/react-router";
 import { ContactsFilterBar } from "./contacts-filter-bar";
 import { useQuery } from "@tanstack/react-query";
 import { useFilteredList } from "../model/useFilteredList";
-import { UserAPI } from "../api";
-import type { ContactLinkParams } from "../model/types";
+import { ContactAPI } from "../api";
 import { ContactList } from "./contacts-list";
+import type { ContactProps } from "../model/types";
 
-export function Contacts() {
-  const params: ContactLinkParams = useParams({ from: "/_contacts-layout" });
+export function Contacts({ initialContactId }: ContactProps) {
   const [selectedId, setSelectedId] = useState<string | null>(
-    params?.contactId ?? null
+    initialContactId || null
   );
-  const { data, isLoading, error } = useQuery(UserAPI.getUsers());
+
+  const { data, isLoading, error } = useQuery(ContactAPI.getUsers());
+
   const { filteredList, onChange, searchTerm } = useFilteredList(
     data!,
     selectedId!
@@ -30,6 +30,7 @@ export function Contacts() {
     <div className="w-full max-w-sm p-4 bg-secondary rounded-md">
       <ContactsFilterBar onChange={onChange} searchTerm={searchTerm} />
       <ContactList
+        contactId={initialContactId}
         filteredList={filteredList}
         selectedId={selectedId}
         setSelectedId={setSelectedId}

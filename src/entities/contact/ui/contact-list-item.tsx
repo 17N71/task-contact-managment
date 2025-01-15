@@ -20,6 +20,7 @@ export function ContactListitem({
         onClick={onSelect}
         to="/$contactId"
         params={{ contactId: String(id) }}
+        viewTransition
       >
         {name}
       </Link>

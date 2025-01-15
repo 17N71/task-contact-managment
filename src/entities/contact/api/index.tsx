@@ -2,7 +2,7 @@ import { queryOptions } from "@tanstack/react-query";
 import { BASE_URL } from "~/shared/constants";
 import { ContactEntity } from "../model/types";
 
-export const UserAPI = {
+export const ContactAPI = {
   getUsers() {
     return queryOptions({
       queryKey: ["get-users", "users"],
@@ -31,15 +31,14 @@ export const UserAPI = {
     });
   },
   deleteUserById(id: string) {
-    return queryOptions({
+    return {
       queryKey: ["delete-user-by-ud", "users", id],
-      queryFn: async ({ signal }) => {
-        const response = await fetch(`${BASE_URL}/users?id=${id}`, {
+      mutationFn: async () => {
+        const response = await fetch(`${BASE_URL}/users/${id}`, {
           method: "DELETE",
-          signal,
         });
         return await response.json();
       },
-    });
+    };
   },
 };

@@ -1,17 +1,16 @@
-import { useParams } from "@tanstack/react-router";
 import { ContactListitem } from "./contact-list-item";
-import type { ContactLinkParams, ContactListProps } from "../model/types";
+import type { ContactListProps } from "../model/types";
 
 export function ContactList({
   filteredList,
   selectedId,
+  contactId,
   setSelectedId,
 }: ContactListProps) {
-  const params: ContactLinkParams = useParams({ from: "/_contacts-layout" });
   return (
     <ul className="space-y-2 mt-4">
       {filteredList?.map((item) => {
-        const isSelected = item?.id === selectedId && !!params?.contactId;
+        const isSelected = item?.id === selectedId && !!contactId;
         return (
           <ContactListitem
             key={item?.id}

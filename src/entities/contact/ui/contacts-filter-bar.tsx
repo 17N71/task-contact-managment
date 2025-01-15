@@ -24,9 +24,8 @@ export function ContactsFilterBar({
         className="p-1 px-3 inline-flex font-semibold justify-center rounded-lg items-center ml-2 border border-solid border-gray-600/80 text-lg"
       >
         <Link
-          to="."
-          state={true}
-          from="/contacts"
+          viewTransition
+          to="/contacts"
           className="text-blue-500 text-sm py-0.5"
         >
           New
