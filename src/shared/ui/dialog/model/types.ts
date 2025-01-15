@@ -1,3 +1,5 @@
+import type { dialogs } from "~/widgets/dialogs";
+
 export type DialogNames = "edit-contact" | "delete-contact" | undefined;
 
 export type DialogStateContextProps =
@@ -16,4 +18,8 @@ export type DialogActionContextProps =
 export type DialogProps = {
   isOpen?: boolean;
   onClose: () => void;
+};
+
+export type DialogStateType = {
+  dialogName: keyof typeof dialogs;
 };

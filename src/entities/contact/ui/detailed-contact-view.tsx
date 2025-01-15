@@ -66,7 +66,12 @@ export function DetailedContactView({ contact }: DetailedContactProps) {
           </div>
           <div className="flex gap-3 mt-3">
             <button
-              onClick={() => dispatchDialog(EDIT_CONTACT)}
+              onClick={() =>
+                dispatchDialog(EDIT_CONTACT, {
+                  id: String(contact.id),
+                  editableContact: contact,
+                })
+              }
               type="button"
               className="py-2 px-4 text-center flex justify-center items-center font-semibold border border-gray-400/80 rounded-xl text-sm hover:bg-blue-500 hover:text-white transition-colors duration-150 text-blue-500 ease-out"
             >

@@ -3,10 +3,13 @@ import { ContactEntity } from "./types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ContactAPI } from "../api";
 import { createContactSchema } from "./schemas";
+import { useRouter } from "@tanstack/react-router";
 
 export const useCreateContact = () => {
-  const { mutateAsync } = useMutation(ContactAPI.createUser());
+  const { mutateAsync } = useMutation(ContactAPI.createContact());
   const queryClient = useQueryClient();
+  const { history } = useRouter();
+
   const form = useForm<Omit<ContactEntity, "id">>({
     validators: {
       onSubmit: createContactSchema,
@@ -26,5 +29,7 @@ export const useCreateContact = () => {
     },
   });
 
-  return { form };
+  const goBack = () => history.back();
+
+  return { form, goBack };
 };

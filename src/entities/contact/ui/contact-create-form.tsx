@@ -3,21 +3,27 @@ import { Input } from "~/shared/ui/Input";
 import { toBase64 } from "~/shared/helpers/to-base64";
 import { useCreateContact } from "../model/useCreateContact";
 import { FormErrorField } from "~/shared/ui/error-fields";
+import { SquareArrowLeft } from "lucide-react";
+import { cn } from "~/shared/utils/cn";
 
 export function ContactCreateForm() {
-  const { form } = useCreateContact();
+  const { form, goBack } = useCreateContact();
+
   return (
     <div>
+      <button onClick={goBack} className="my-2" type="button">
+        <SquareArrowLeft size={32} strokeWidth={1} />
+      </button>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           e.stopPropagation();
           form.handleSubmit();
         }}
-        className="flex flex-col gap-4"
       >
-        <div className="flex gap-4">
-          <div className="flex flex-col gap-5">
+        <div className="grid grid-cols-2 gap-4">
+          {" "}
+          <div className="w-full flex flex-col gap-5">
             <div>
               <form.Field
                 name="name"
@@ -37,7 +43,7 @@ export function ContactCreateForm() {
                           onBlur={field.handleBlur}
                           placeholder="Name"
                           onChange={(e) => field.handleChange(e.target.value)}
-                          className="w-full pl-10 pr-3 py-2  border rounded-md
+                          className="pr-3 py-2  border rounded-md
                               focus:outline-none  focus:ring-2 focus:ring-blue-500"
                         />
                       </div>
@@ -101,8 +107,7 @@ export function ContactCreateForm() {
               />
             </div>
           </div>
-
-          <div className="flex flex-col gap-5">
+          <div className="w-full flex flex-col gap-5">
             <div>
               <form.Field
                 name="avatar"
@@ -121,7 +126,12 @@ export function ContactCreateForm() {
                         <div className="flex items-center space-x-2 w-full max-w-xs">
                           <label
                             htmlFor={field.name}
-                            className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 cursor-pointer"
+                            className={cn(
+                              "flex  items-center px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 cursor-pointer",
+                              {
+                                "w-full": !field.state.value?.length,
+                              }
+                            )}
                           >
                             <span>Choose File</span>
                           </label>
@@ -142,9 +152,9 @@ export function ContactCreateForm() {
                           {!!field.state.value?.length && (
                             <img
                               width={40}
-                              height={20}
+                              height={40}
                               src={field.state.value}
-                              className="h-10 w-10"
+                              className="h-10 w-10 object-cover object-center"
                             />
                           )}
                         </div>
@@ -205,12 +215,13 @@ export function ContactCreateForm() {
             </div>
           </div>
         </div>
+
         <form.Subscribe
           selector={(state) => [state.canSubmit, state.isSubmitting]}
           children={([canSubmit, isSubmitting]) => (
             <button
               type="submit"
-              className="border px-4 py-2  hover:bg-black/5 transition-colors duration-150"
+              className="border px-4 py-2 w-full mt-3 bg-blue-500/80 text-white hover:bg-blue-500/100 transition-colors duration-150"
               disabled={!canSubmit}
             >
               {isSubmitting ? "..." : "Submit"}

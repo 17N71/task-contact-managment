@@ -6,4 +6,4 @@ export const dialogs = {
   [DELETE_CONTACT]: lazy(
     async () => await import("./ui/delete-dialog-content")
   ),
-};
+} as const;

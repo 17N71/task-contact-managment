@@ -18,10 +18,10 @@ export const useDialogAction = () => {
   return dialogAction;
 };
 
-export const useDialogState = () => {
+export const useDialogState = <T = unknown>() => {
   const dialogState = useContext(DialogStateContext);
   if (!dialogState) {
     throw new Error("useDialogState must be used with in DialogProvider");
   }
-  return dialogState;
+  return dialogState as T;
 };

@@ -2,10 +2,11 @@ import { useOutsideClick } from "~/shared/utils/hooks/useOnOutsideClick";
 import { useDialogAction, useDialogState } from "../model/dialog-contexts";
 import { dialogs } from "~/widgets/dialogs";
 import { Suspense } from "react";
+import type { DialogStateType } from "../model/types";
 
 export function Dialog() {
   const { dispatchDialog } = useDialogAction();
-  const { dialogName } = useDialogState();
+  const { dialogName } = useDialogState<DialogStateType>();
   const ref = useOutsideClick(() => dispatchDialog(undefined));
 
   if (!dialogName) {

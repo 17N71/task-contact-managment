@@ -3,11 +3,11 @@ import { BASE_URL } from "~/shared/constants";
 import { ContactEntity } from "../model/types";
 
 export const ContactAPI = {
-  getUsers() {
+  getContacts() {
     return queryOptions({
-      queryKey: ["get-users", "users"],
+      queryKey: ["get-contacts", "contacts"],
       queryFn: async ({ signal }): Promise<ContactEntity[]> => {
-        const data = await fetch(`${BASE_URL}/users`, {
+        const data = await fetch(`${BASE_URL}/contacts`, {
           method: "GET",
           signal,
         });
@@ -15,11 +15,11 @@ export const ContactAPI = {
       },
     });
   },
-  getUserById(id: string) {
+  getContactById(id: string) {
     return queryOptions({
-      queryKey: ["get-user-by-id", id],
+      queryKey: ["get-contact-by-id", id],
       queryFn: async ({ signal }): Promise<ContactEntity[]> => {
-        const response = await fetch(`${BASE_URL}/users?id=${id}`, {
+        const response = await fetch(`${BASE_URL}/contacts?id=${id}`, {
           method: "GET",
           signal,
         });
@@ -30,22 +30,38 @@ export const ContactAPI = {
       },
     });
   },
-  deleteUserById(id: string) {
+  deleteContactById(id: string) {
     return {
-      queryKey: ["delete-user-by-ud", "users", id],
+      queryKey: ["delete-contact-by-id", "contacts", id],
       mutationFn: async () => {
-        const response = await fetch(`${BASE_URL}/users/${id}`, {
+        const response = await fetch(`${BASE_URL}/contacts/${id}`, {
           method: "DELETE",
         });
         return await response.json();
       },
     };
   },
-  createUser() {
+  updateContact(id: string) {
     return {
-      queryKey: ["create-user", "users"],
+      queryKey: ["edit-contact", "contacts", id],
+      mutationFn: async (payload: Omit<ContactEntity, "avatar">) => {
+        const response = await fetch(`${BASE_URL}/contacts/${payload.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+        const data = await response.json();
+        return data;
+      },
+    };
+  },
+  createContact() {
+    return {
+      queryKey: ["create-contact", "contacts"],
       mutationFn: async (payload: Omit<ContactEntity, "id">) => {
-        const response = await fetch(`${BASE_URL}/users`, {
+        const response = await fetch(`${BASE_URL}/contacts`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

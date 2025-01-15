@@ -7,7 +7,7 @@ import { DetailedContactView } from "~/entities/contact/ui";
 export function DetailedContactPage() {
   const { contactId } = useParams({ from: "/_contacts-layout/$contactId" });
   const { data: contact, isLoading } = useQuery(
-    ContactAPI.getUserById(contactId)
+    ContactAPI.getContactById(contactId)
   );
 
   if (isLoading) {

@@ -11,11 +11,11 @@ export function Contacts({ initialContactId }: ContactProps) {
     initialContactId || null
   );
 
-  const { data, isLoading, error } = useQuery(ContactAPI.getUsers());
+  const { data, isLoading, error } = useQuery(ContactAPI.getContacts());
 
   const { filteredList, onChange, searchTerm } = useFilteredList(
-    data!,
-    selectedId!
+    data!
+    // selectedId!
   );
 
   if (isLoading) {
