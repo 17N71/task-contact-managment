@@ -144,7 +144,8 @@ export function ContactEditForm({ contact }: { contact: ContactEntity }) {
                   children={(field) => (
                     <>
                       <div className="relative">
-                        <Input
+                        <textarea
+                          className="px-2 py-2 min-h-10 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                           id={field.name}
                           name={field.name}
                           placeholder="About"
