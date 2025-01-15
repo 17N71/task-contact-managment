@@ -41,4 +41,19 @@ export const ContactAPI = {
       },
     };
   },
+  createUser() {
+    return {
+      queryKey: ["create-user", "users"],
+      mutationFn: async (payload: Omit<ContactEntity, "id">) => {
+        const response = await fetch(`${BASE_URL}/users`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+        return await response.json();
+      },
+    };
+  },
 };

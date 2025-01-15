@@ -13,11 +13,17 @@ export function DetailedContactView({ contact }: DetailedContactProps) {
     return <Navigate to="/contacts" />;
   }
 
+  const isBase64 = contact.avatar.startsWith("data:image");
+
   return (
     <div>
       <div className="flex items-start gap-10">
         <img
-          src={`${window.location.origin}${contact.avatar}`}
+          src={
+            isBase64
+              ? contact.avatar
+              : `${window.location.origin}${contact.avatar}`
+          }
           loading="eager"
           width={180}
           height={180}
