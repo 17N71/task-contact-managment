@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import { Navigate } from "@tanstack/react-router";
 import { useParams } from "@tanstack/react-router";
 import { useShallow } from "zustand/shallow";
 import { ContactAPI } from "~/entities/contact/api";
@@ -12,13 +11,15 @@ export function DetailedContactPage() {
     from: "/_contacts-layout/_fallback-layout/$contactId",
   });
   const isForEdit = useContactStore(useShallow((state) => state.isForEdit));
-  const { data: contact } = useQuery(ContactAPI.getContactById(contactId));
+  const { data: contact, isLoading } = useQuery(
+    ContactAPI.getContactById(contactId)
+  );
 
-  if (!contact) {
-    return <Navigate to="/contacts" />;
+  if (isLoading) {
+    return "...";
   }
 
   const ContactComponent = isForEdit ? ContactEditForm : DetailedContactView;
 
-  return <ContactComponent contact={contact} />;
+  return <ContactComponent contact={contact!} />;
 }

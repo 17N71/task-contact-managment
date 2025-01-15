@@ -26,7 +26,7 @@ export const useEditContact = (contact: ContactEntity) => {
     },
     onSubmit: async ({ value, formApi }) => {
       if (value) {
-        await mutateAsync({ ...value, id: contact!.id });
+        await mutateAsync({ ...value, id: contact?.id });
         formApi.reset();
         formApi.setFieldValue("about", "");
         formApi.setFieldValue("email", "");

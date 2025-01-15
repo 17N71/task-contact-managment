@@ -14,7 +14,7 @@ export function Contacts({ initialContactId }: ContactProps) {
   const { data, isLoading, error } = useQuery(ContactAPI.getContacts());
 
   const { filteredList, onChange, searchTerm } = useFilteredList(
-    data!
+    data ?? []!
     // selectedId!
   );
 

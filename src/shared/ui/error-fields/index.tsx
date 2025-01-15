@@ -10,8 +10,10 @@ export function FormErrorField({
   return (
     <>
       {field.state.meta.isTouched && field.state.meta.errors.length
-        ? field.state.meta.errors.map((error) => (
-            <em key={nanoid()}>{error}</em>
+        ? [...new Set(field.state.meta.errors)].map((error) => (
+            <em className="text-red-500" key={nanoid()}>
+              {error}
+            </em>
           ))
         : false}
     </>

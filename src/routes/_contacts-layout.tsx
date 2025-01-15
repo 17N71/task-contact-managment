@@ -13,7 +13,7 @@ function RouteComponent() {
 
   return (
     <div className="flex items-start overflow-hidden">
-      <Contacts initialContactId={params?.contactId || "1"} />
+      <Contacts initialContactId={params?.contactId || null} />
       <Outlet />
     </div>
   );
