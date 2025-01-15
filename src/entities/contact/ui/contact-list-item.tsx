@@ -12,7 +12,7 @@ export function ContactListitem({
     <li
       className={cn("rounded-md cursor-pointer transition-colors", {
         ["bg-blue-600 text-white"]: isSelected,
-        ["hover:bg-gray-100"]: !isSelected,
+        ["hover:bg-gray-200"]: !isSelected,
       })}
     >
       <Link

@@ -2,22 +2,15 @@ import { useForm } from "@tanstack/react-form";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ContactAPI } from "~/entities/contact/api";
 import { updateContactSchema } from "~/entities/contact/model/schemas";
-import { ContactEntity } from "~/entities/contact/model/types";
-import {
-  useDialogAction,
-  useDialogState,
-} from "~/shared/ui/dialog/model/dialog-contexts";
-import type { EditDialogProps } from "./type";
+import type { ContactEntity } from "../model/types";
+import { useContactStore } from "./store/contact";
+import { useShallow } from "zustand/shallow";
 
-export const useEditContact = () => {
+export const useEditContact = (contact: ContactEntity) => {
   const queryClient = useQueryClient();
-
-  const { dispatchDialog } = useDialogAction();
-  const { dialogProps } = useDialogState<EditDialogProps>();
-  const close = () => dispatchDialog(undefined);
-  const { id } = dialogProps ?? { id: "" };
+  const { setEditMode } = useContactStore(useShallow((prev) => ({ ...prev })));
   const { mutateAsync } = useMutation({
-    ...ContactAPI.updateContact(id),
+    ...ContactAPI.updateContact(String(contact?.id)),
     onSuccess: async () => {
       close();
       queryClient.refetchQueries();
@@ -29,11 +22,11 @@ export const useEditContact = () => {
       onSubmit: updateContactSchema,
     },
     defaultValues: {
-      ...dialogProps.editableContact,
+      ...contact!,
     },
     onSubmit: async ({ value, formApi }) => {
       if (value) {
-        await mutateAsync({ ...value, id });
+        await mutateAsync({ ...value, id: contact!.id });
         formApi.reset();
         formApi.setFieldValue("about", "");
         formApi.setFieldValue("email", "");
@@ -41,12 +34,17 @@ export const useEditContact = () => {
         formApi.setFieldValue("name", "");
         formApi.setFieldValue("username", "");
         queryClient.refetchQueries();
+        setEditMode(false);
       }
     },
   });
+  const goBack = () => {
+    setEditMode(false);
+  };
 
   return {
     close,
     form,
+    goBack,
   };
 };

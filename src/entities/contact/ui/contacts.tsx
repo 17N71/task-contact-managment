@@ -27,8 +27,9 @@ export function Contacts({ initialContactId }: ContactProps) {
   }
 
   return (
-    <div className="w-full pt-5 px-4 flex flex-col max-w-wsm overflow-y-auto h-full  bg-secondary rounded-md">
+    <div className="w-full pb-4 px-4 flex flex-col max-w-wsm overflow-y-auto h-full  bg-secondary rounded-md border-r border-gray-300/40 rounded-tr-none">
       <ContactsFilterBar onChange={onChange} searchTerm={searchTerm} />
+      <hr />
       <ContactList
         contactId={initialContactId}
         filteredList={filteredList}

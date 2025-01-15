@@ -8,8 +8,8 @@ export function ContactsFilterBar({
 }: ContactsFilterBarProps) {
   return (
     <div className="max-w-md top-0 w-full sticky bg-secondary">
-      <div className="py-4 h-full w-full bg-secondary flex justify-center items-center mx-auto">
-        <div className="absolute left-6 top-1/2 -translate-y-1/2 text-muted-foreground">
+      <div className=" w-full bg-secondary flex justify-center items-center mx-auto h-[70px]">
+        <div className="absolute left-6  text-muted-foreground">
           <Search className="h-4 w-4" color="#424b57fb" />
         </div>
         <input
@@ -26,7 +26,7 @@ export function ContactsFilterBar({
         >
           <Link
             viewTransition
-            to="/contacts"
+            to="/new-contact"
             className="text-blue-500 text-sm py-1.5 px-3 w-full h-full block"
           >
             New

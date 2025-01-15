@@ -6,6 +6,9 @@ export default {
       colors: {
         secondary: "#f6f6f6",
       },
+      height: {
+        "70h": "4.375rem",
+      },
       maxWidth: {
         wsm: "21.5rem",
       },

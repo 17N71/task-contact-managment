@@ -38,3 +38,10 @@ export type ContactListProps = {
 export type ContactProps = {
   initialContactId: string | null;
 };
+
+export type EditDialogProps = {
+  dialogProps: {
+    id: string;
+    editableContact: Omit<ContactEntity, "avatar">;
+  };
+};

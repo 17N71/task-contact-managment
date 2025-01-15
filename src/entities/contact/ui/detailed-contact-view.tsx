@@ -1,16 +1,24 @@
 import type { DetailedContactProps } from "../model/types";
 import { Star } from "lucide-react";
 import { useDialogAction } from "~/shared/ui/dialog/model/dialog-contexts";
-import { DELETE_CONTACT, EDIT_CONTACT } from "~/shared/ui/dialog/model";
+import { DELETE_CONTACT } from "~/shared/ui/dialog/model";
 import { Navigate } from "@tanstack/react-router";
 import { useLocalStorage } from "~/shared/utils/hooks/use-local-stoage";
+import { useContactStore } from "../model/store/contact";
+import { useShallow } from "zustand/shallow";
 
 export function DetailedContactView({ contact }: DetailedContactProps) {
   const [isFavorite, setIsFavorite] = useLocalStorage(
     String(contact!.id),
     false
   );
+
+  const setContact = useContactStore(useShallow((prev) => prev.setContact));
   const { dispatchDialog } = useDialogAction();
+
+  const handleEditContact = () => {
+    setContact(contact!, true);
+  };
 
   if (!contact) {
     return <Navigate to="/contacts" />;
@@ -19,7 +27,7 @@ export function DetailedContactView({ contact }: DetailedContactProps) {
   const isBase64 = contact.avatar.startsWith("data:image");
 
   return (
-    <div className="mt-8">
+    <div className="mt-8 ml-9">
       <div className="flex items-start gap-10">
         <img
           src={
@@ -69,12 +77,7 @@ export function DetailedContactView({ contact }: DetailedContactProps) {
           </div>
           <div className="flex gap-3 mt-3">
             <button
-              onClick={() =>
-                dispatchDialog(EDIT_CONTACT, {
-                  id: String(contact.id),
-                  editableContact: contact,
-                })
-              }
+              onClick={handleEditContact}
               type="button"
               className="py-2 px-4 text-center flex justify-center items-center font-semibold border border-gray-400/80 rounded-xl text-sm hover:bg-blue-500 hover:text-white transition-colors duration-150 text-blue-500 ease-out"
             >

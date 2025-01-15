@@ -5,6 +5,7 @@ export default function DeleteDialogContent() {
   const { mutateAsync, close } = useDeleteContact();
   const router = useRouter();
   const navigate = useNavigate({ from: "/contacts" });
+
   return (
     <div className="flex flex-col gap-10">
       <h2>Are you sure you want to delete this contact?</h2>
