@@ -6,7 +6,8 @@
       "username": "@DennisBeatty",
       "avatar": "/avatars/dennis_beatty.jpg",
       "external_url": "https://github.com/DennisBeatty",
-      "about": "Dennis is a software engineer specializing in backend development and open-source projects."
+      "about": "Dennis is a software engineer specializing in backend development and open-source projects.",
+      "email": "dennis.beatty@example.com"
     },
     {
       "id": "2",
@@ -14,7 +15,8 @@
       "username": "@GregBrimble",
       "avatar": "/avatars/greg_brimble.jpeg",
       "external_url": "https://facebook.com/GregBrimble",
-      "about": "Greg is a front-end developer with a passion for building engaging user experiences."
+      "about": "Greg is a front-end developer with a passion for building engaging user experiences.",
+      "email": "greg.brimble@example.com"
     },
     {
       "id": "3",
@@ -22,7 +24,8 @@
       "username": "@RyanDahl",
       "avatar": "/avatars/ryan_dahl.png",
       "external_url": "https://github.com/RyanDahl",
-      "about": "Ryan is the creator of Node.js and Deno, focusing on efficient and modern JavaScript runtimes."
+      "about": "Ryan is the creator of Node.js and Deno, focusing on efficient and modern JavaScript runtimes.",
+      "email": "ryan.dahl@example.com"
     },
     {
       "id": "4",
@@ -30,7 +33,8 @@
       "username": "@SarahDayan",
       "avatar": "/avatars/sarah_dayan.jpg",
       "external_url": "https://instagram.com/SarahDayan",
-      "about": "Sarah is a UI/UX designer with expertise in creating visually appealing and functional designs."
+      "about": "Sarah is a UI/UX designer with expertise in creating visually appealing and functional designs.",
+      "email": "sarah.dayan@example.com"
     },
     {
       "id": "5",
@@ -38,7 +42,8 @@
       "username": "@CeoraFord",
       "avatar": "/avatars/ceora_ford.jpg",
       "external_url": "https://facebook.com/CeoraFord",
-      "about": "Ceora is a content creator and web developer passionate about empowering new developers."
+      "about": "Ceora is a content creator and web developer passionate about empowering new developers.",
+      "email": "ceora.ford@example.com"
     },
     {
       "id": "6",
@@ -46,7 +51,8 @@
       "username": "@AnthonyFrehner",
       "avatar": "/avatars/anthony_frehner.jpg",
       "external_url": "https://github.com/AnthonyFrehner",
-      "about": "Anthony is a full-stack developer with a knack for solving complex problems and writing clean code."
+      "about": "Anthony is a full-stack developer with a knack for solving complex problems and writing clean code.",
+      "email": "anthony.frehner@example.com"
     },
     {
       "id": "7",
@@ -54,7 +60,8 @@
       "username": "@ArisaFukuzaki",
       "avatar": "/avatars/arisa_fukuzaki.webp",
       "external_url": "https://instagram.com/ArisaFukuzaki",
-      "about": "Arisa is a digital marketer and developer with a focus on building impactful web campaigns."
+      "about": "Arisa is a digital marketer and developer with a focus on building impactful web campaigns.",
+      "email": "arisa.fukuzaki@example.com"
     },
     {
       "id": "8",
@@ -62,7 +69,8 @@
       "username": "@HenriHelvetica",
       "avatar": "/avatars/henri_helvetica.jpeg",
       "external_url": "https://facebook.com/HenriHelvetica",
-      "about": "Henri is a web performance advocate and developer passionate about fast and accessible web experiences."
+      "about": "Henri is a web performance advocate and developer passionate about fast and accessible web experiences.",
+      "email": "henri.helvetica@example.com"
     },
     {
       "id": "9",
@@ -70,7 +78,8 @@
       "username": "@MichaelJackson",
       "avatar": "/avatars/michael_jackson.jpeg",
       "external_url": "https://instagram.com/MichaelJackson",
-      "about": "Michael Jackson was a legendary singer, songwriter, and performer known as the King of Pop."
+      "about": "Michael Jackson was a legendary singer, songwriter, and performer known as the King of Pop.",
+      "email": "michael.jackson@example.com"
     }
   ]
 }

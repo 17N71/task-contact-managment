@@ -8,9 +8,11 @@ import { Navigate } from "@tanstack/react-router";
 export function DetailedContactView({ contact }: DetailedContactProps) {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
   const { dispatchDialog } = useDialogAction();
+
   if (!contact) {
     return <Navigate to="/contacts" />;
   }
+
   return (
     <div>
       <div className="flex items-start gap-10">
@@ -22,7 +24,7 @@ export function DetailedContactView({ contact }: DetailedContactProps) {
           alt={contact.name}
           title={contact.name}
           className="rounded-2xl object-cover object-center overflow-hidden
-                 w-[180px] h-[180px]"
+                     w-[180px] h-[180px]"
         />
         <div>
           <div className="flex items-center gap-3">
@@ -38,10 +40,19 @@ export function DetailedContactView({ contact }: DetailedContactProps) {
           <div className="mt-3">
             <a
               target="_blank"
-              className="text-xl text-blue-500 font-semibold"
+              className="text-xl text-blue-500 font-semibold hover:underline"
               href={contact.external_url}
             >
               {contact.username}
+            </a>
+          </div>
+          <div className="mt-3">
+            <a
+              className="text-blue-500 hover:underline"
+              target="_blank"
+              href={`mailto:${contact.email}`}
+            >
+              {contact.email}
             </a>
           </div>
           <div className="mt-3">
