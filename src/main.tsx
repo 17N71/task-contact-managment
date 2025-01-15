@@ -5,6 +5,7 @@ import { routeTree } from "./routeTree.gen";
 import "~/shared/css/index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { DialogProvider } from "./shared/ui/dialog/ui";
 
 const router = createRouter({ routeTree });
 
@@ -28,7 +29,9 @@ const queryClient = new QueryClient({
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider basepath="/contacts" router={router} />
+      <DialogProvider>
+        <RouterProvider basepath="/contacts" router={router} />
+      </DialogProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   </StrictMode>
