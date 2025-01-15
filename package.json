@@ -7,7 +7,7 @@
     "dev": "concurrently \"json-server --watch ./db.json\" \"vite\"",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "prettier": "prettier --write",
+    "prettier": "prettier --write .",
     "preview": "concurrently \"json-server --watch ./db.json\" \"vite preview\"",
     "prepare": "husky install"
   },
