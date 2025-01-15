@@ -1,12 +1,15 @@
 import type { DetailedContactProps } from "../model/types";
 import { Star } from "lucide-react";
-import { useState } from "react";
 import { useDialogAction } from "~/shared/ui/dialog/model/dialog-contexts";
 import { DELETE_CONTACT, EDIT_CONTACT } from "~/shared/ui/dialog/model";
 import { Navigate } from "@tanstack/react-router";
+import { useLocalStorage } from "~/shared/utils/hooks/use-local-stoage";
 
 export function DetailedContactView({ contact }: DetailedContactProps) {
-  const [isFavorite, setIsFavorite] = useState<boolean>(false);
+  const [isFavorite, setIsFavorite] = useLocalStorage(
+    String(contact!.id),
+    false
+  );
   const { dispatchDialog } = useDialogAction();
 
   if (!contact) {
@@ -37,7 +40,7 @@ export function DetailedContactView({ contact }: DetailedContactProps) {
             <h2 className="font-bold text-3xl">{contact.name}</h2>
             <Star
               size={22}
-              onClick={() => setIsFavorite((prev) => !prev)}
+              onClick={() => setIsFavorite(!isFavorite)}
               fill={isFavorite ? "#f9dc02" : "transparent"}
               color="#b0b0b0"
               className="mt-1 transition-all duration-200 cursor-pointer"

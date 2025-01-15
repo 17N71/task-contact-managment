@@ -1,4 +1,4 @@
-import { useOutsideClick } from "~/shared/utils/hooks/useOnOutsideClick";
+import { useOutsideClick } from "~/shared/utils/hooks/use-on-outside-click";
 import { useDialogAction, useDialogState } from "../model/dialog-contexts";
 import { dialogs } from "~/widgets/dialogs";
 import { Suspense } from "react";
