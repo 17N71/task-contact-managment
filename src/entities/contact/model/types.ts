@@ -9,6 +9,7 @@ export interface ContactEntity {
   external_url: string;
   about: string;
 }
+
 export type ContactLinkParams = {
   contactId?: string;
 };

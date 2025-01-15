@@ -1,6 +1,8 @@
-import { queryOptions } from "@tanstack/react-query";
+import { QueryClient, queryOptions } from "@tanstack/react-query";
 import { BASE_URL } from "~/shared/constants";
 import { ContactEntity } from "../model/types";
+
+const queryClient = new QueryClient();
 
 export const ContactAPI = {
   getUsers() {
@@ -52,7 +54,9 @@ export const ContactAPI = {
           },
           body: JSON.stringify(payload),
         });
-        return await response.json();
+        const data = await response.json();
+        queryClient.refetchQueries();
+        return data;
       },
     };
   },
