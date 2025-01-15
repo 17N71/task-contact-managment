@@ -2,10 +2,10 @@
   "contacts": [
     {
       "id": "1",
-      "name": "Dennis Beatty",
-      "username": "@DennisBeatty",
+      "name": "Dennis Beattya",
+      "username": "@DennisBeattyaa",
       "avatar": "/avatars/dennis_beatty.jpg",
-      "external_url": "https://github.com/DennisBeatty",
+      "external_url": "https://github.com/DennisBeataty",
       "about": "Dennis is a software engineer specializing in backend development and open-source projects.",
       "email": "dennis.beatty@example.com"
     },
@@ -26,15 +26,6 @@
       "external_url": "https://github.com/RyanDahl",
       "about": "Ryan is the creator of Node.js and Deno, focusing on efficient and modern JavaScript runtimes.",
       "email": "ryan.dahl@example.com"
-    },
-    {
-      "id": "4",
-      "name": "Sarah Dayan",
-      "username": "@SarahDayan",
-      "avatar": "/avatars/sarah_dayan.jpg",
-      "external_url": "https://instagram.com/SarahDayan",
-      "about": "Sarah is a UI/UX designer with expertise in creating visually appealing and functional designs.",
-      "email": "sarah.dayan@example.com"
     },
     {
       "id": "5",
@@ -74,8 +65,8 @@
     },
     {
       "id": "9",
-      "name": "Michael Jackson",
-      "username": "@MichaelJackson",
+      "name": "Michael Jackson1",
+      "username": "@dsad",
       "avatar": "/avatars/michael_jackson.jpeg",
       "external_url": "https://instagram.com/MichaelJackson",
       "about": "Michael Jackson was a legendary singer, songwriter, and performer known as the King of Pop.",
