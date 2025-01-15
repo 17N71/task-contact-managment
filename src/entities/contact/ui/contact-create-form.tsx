@@ -76,9 +76,9 @@ export function ContactCreateForm() {
                 validators={{
                   onChange: z
                     .string()
-                    // eslint-disable-next-line no-useless-escape
                     .min(1, { message: "This field has to be filled." })
                     .regex(
+                      // eslint-disable-next-line no-useless-escape
                       /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
                       "Please write correct email"
                     ),
