@@ -1,4 +1,3 @@
-import { z } from "zod";
 import { Input } from "~/shared/ui/Input";
 import { FormErrorField } from "~/shared/ui/error-fields";
 import { SquareArrowLeft } from "lucide-react";
@@ -29,11 +28,6 @@ export function ContactEditForm({ contact }: { contact: ContactEntity }) {
               <div>
                 <form.Field
                   name="name"
-                  validators={{
-                    onChange: z
-                      .string()
-                      .min(3, "name must be at least 3 characters"),
-                  }}
                   children={(field) => {
                     return (
                       <>
@@ -58,9 +52,6 @@ export function ContactEditForm({ contact }: { contact: ContactEntity }) {
               <div>
                 <form.Field
                   name="username"
-                  validators={{
-                    onChange: z.string().startsWith("@"),
-                  }}
                   children={(field) => (
                     <>
                       <div className="relative">
@@ -81,16 +72,6 @@ export function ContactEditForm({ contact }: { contact: ContactEntity }) {
               <div>
                 <form.Field
                   name="email"
-                  validators={{
-                    onChange: z
-                      .string()
-                      .min(1, { message: "This field has to be filled." })
-                      .regex(
-                        // eslint-disable-next-line no-useless-escape
-                        /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
-                        "Please write correct email"
-                      ),
-                  }}
                   children={(field) => (
                     <>
                       <div className="relative">
@@ -113,9 +94,6 @@ export function ContactEditForm({ contact }: { contact: ContactEntity }) {
               <div>
                 <form.Field
                   name="external_url"
-                  validators={{
-                    onChange: z.string(),
-                  }}
                   children={(field) => (
                     <>
                       <div className="relative">
@@ -136,11 +114,6 @@ export function ContactEditForm({ contact }: { contact: ContactEntity }) {
               <div>
                 <form.Field
                   name="about"
-                  validators={{
-                    onChange: z
-                      .string()
-                      .min(1, { message: "This field has to be filled." }),
-                  }}
                   children={(field) => (
                     <>
                       <div className="relative">

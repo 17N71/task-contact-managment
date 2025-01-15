@@ -21,20 +21,11 @@
     {
       "id": "3",
       "name": "Ryan Dahl",
-      "username": "@RyanDahl",
+      "username": "@RyanDahls",
       "avatar": "/avatars/ryan_dahl.png",
       "external_url": "https://github.com/RyanDahl",
       "about": "Ryan is the creator of Node.js and Deno, focusing on efficient and modern JavaScript runtimes.",
       "email": "ryan.dahl@example.com"
-    },
-    {
-      "id": "5",
-      "name": "Ceora Ford",
-      "username": "@CeoraFord",
-      "avatar": "/avatars/ceora_ford.jpg",
-      "external_url": "https://facebook.com/CeoraFord",
-      "about": "Ceora is a content creator and web developer passionate about empowering new developers.",
-      "email": "ceora.ford@example.com"
     },
     {
       "id": "6",

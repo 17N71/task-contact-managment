@@ -32,10 +32,6 @@ export const updateContactSchema = z.object({
   username: z
     .string()
     .nonempty("Username is required.")
-    .regex(
-      /^[a-zA-Z0-9_]+$/,
-      "Username can only contain alphanumeric characters and underscores."
-    )
     .max(30, "Username should not exceed 30 characters."),
   email: z
     .string()
