@@ -16,7 +16,7 @@ export function DetailedContactView({ contact }: DetailedContactProps) {
   const isBase64 = contact.avatar.startsWith("data:image");
 
   return (
-    <div>
+    <div className="mt-8">
       <div className="flex items-start gap-10">
         <img
           src={

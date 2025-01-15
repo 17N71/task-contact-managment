@@ -8,7 +8,7 @@ export function ContactList({
   setSelectedId,
 }: ContactListProps) {
   return (
-    <ul className="space-y-2 mt-4">
+    <ul className="space-y-2 mt-4 h-screen">
       {filteredList?.map((item) => {
         const isSelected = item?.id === selectedId && !!contactId;
         return (

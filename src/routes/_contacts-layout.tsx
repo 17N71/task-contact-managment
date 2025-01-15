@@ -27,7 +27,7 @@ function RouteComponent() {
   }, []);
 
   return (
-    <div className="flex items-start px-4 py-5 gap-10">
+    <div className="flex items-start gap-10 overflow-hidden">
       <Contacts initialContactId={params?.contactId || "1"} />
       <Outlet />
     </div>

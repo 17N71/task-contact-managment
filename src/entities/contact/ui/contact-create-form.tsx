@@ -10,7 +10,7 @@ export function ContactCreateForm() {
   const { form, goBack } = useCreateContact();
 
   return (
-    <div>
+    <div className="mt-7">
       <button onClick={goBack} className="my-2" type="button">
         <SquareArrowLeft size={32} strokeWidth={1} />
       </button>
@@ -22,7 +22,6 @@ export function ContactCreateForm() {
         }}
       >
         <div className="grid grid-cols-2 gap-4">
-          {" "}
           <div className="w-full flex flex-col gap-5">
             <div>
               <form.Field
