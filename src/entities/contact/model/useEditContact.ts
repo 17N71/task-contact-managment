@@ -34,8 +34,6 @@ export const useEditContact = (contact: ContactEntity) => {
           formApi.setFieldValue("external_url", "");
           formApi.setFieldValue("name", "");
           formApi.setFieldValue("username", "");
-          queryClient.refetchQueries();
-          queryClient.invalidateQueries();
           setEditMode(false);
         } catch (error) {
           console.log("error", error);

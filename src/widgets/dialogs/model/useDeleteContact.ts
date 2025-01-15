@@ -23,9 +23,6 @@ export const useDeleteContact = () => {
       ...ContactAPI.deleteContactById(dialogState.id),
       onSuccess: async () => {
         await queryClient.refetchQueries();
-        await queryClient.invalidateQueries({
-          queryKey: ["contacts", "get-contacts", "get-contact"],
-        });
         if (!isLoading) {
           navigate({
             to: "/$contactId",

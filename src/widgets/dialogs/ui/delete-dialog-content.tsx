@@ -1,9 +1,8 @@
-import { useNavigate, useRouter } from "@tanstack/react-router";
+import { useNavigate } from "@tanstack/react-router";
 import { useDeleteContact } from "../model/useDeleteContact";
 
 export default function DeleteDialogContent() {
   const { mutateAsync, close } = useDeleteContact();
-  const router = useRouter();
   const navigate = useNavigate({ from: "/contacts" });
 
   return (
@@ -15,7 +14,6 @@ export default function DeleteDialogContent() {
           onClick={async () => {
             await mutateAsync();
             navigate({ to: "/contacts/" as "/contacts", viewTransition: true });
-            router.invalidate({ sync: true });
           }}
         >
           Yes
