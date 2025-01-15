@@ -26,17 +26,20 @@ export const useEditContact = (contact: ContactEntity) => {
     },
     onSubmit: async ({ value, formApi }) => {
       if (value) {
-        console.log("1", 1);
-        await mutateAsync({ ...value, id: contact?.id });
-        formApi.reset();
-        formApi.setFieldValue("about", "");
-        formApi.setFieldValue("email", "");
-        formApi.setFieldValue("external_url", "");
-        formApi.setFieldValue("name", "");
-        formApi.setFieldValue("username", "");
-        queryClient.refetchQueries();
-        queryClient.invalidateQueries();
-        setEditMode(false);
+        try {
+          await mutateAsync({ ...value, id: contact?.id });
+          formApi.reset();
+          formApi.setFieldValue("about", "");
+          formApi.setFieldValue("email", "");
+          formApi.setFieldValue("external_url", "");
+          formApi.setFieldValue("name", "");
+          formApi.setFieldValue("username", "");
+          queryClient.refetchQueries();
+          queryClient.invalidateQueries();
+          setEditMode(false);
+        } catch (error) {
+          console.log("error", error);
+        }
       }
     },
   });

@@ -16,16 +16,20 @@ export const useCreateContact = () => {
     },
     onSubmit: async ({ value, formApi }) => {
       if (value) {
-        const data = await mutateAsync(value);
-        formApi.reset();
-        formApi.setFieldValue("about", "");
-        formApi.setFieldValue("avatar", "");
-        formApi.setFieldValue("email", "");
-        formApi.setFieldValue("external_url", "");
-        formApi.setFieldValue("name", "");
-        formApi.setFieldValue("username", "");
-        queryClient.refetchQueries();
-        navigate({ to: "/$contactId", params: { contactId: data.id } });
+        try {
+          const data = await mutateAsync(value);
+          formApi.reset();
+          formApi.setFieldValue("about", "");
+          formApi.setFieldValue("avatar", "");
+          formApi.setFieldValue("email", "");
+          formApi.setFieldValue("external_url", "");
+          formApi.setFieldValue("name", "");
+          formApi.setFieldValue("username", "");
+          queryClient.refetchQueries();
+          navigate({ to: "/$contactId", params: { contactId: data.id } });
+        } catch (error) {
+          console.log("error", error);
+        }
       }
     },
   });
